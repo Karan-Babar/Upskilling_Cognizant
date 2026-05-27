@@ -32,6 +32,35 @@ section {
     padding: 20px;
 }
 
+#gallery {
+    padding: 30px;
+    text-align: center;
+}
+#gallery h2{
+   font-size: 35px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+td {
+    padding: 20px;
+}
+td p{
+    font-size: 18px;
+}
+.galleryImage {
+    width: 380px;
+    height: 220px;
+    border: 3px solid #007BFF;
+    border-radius: 10px;
+    object-fit: cover;
+}
+.galleryImage:hover {
+    transform: scale(1.05);
+    transition: 0.3s;
+}
+
 footer {
     background-color: #222;
     color: white;
