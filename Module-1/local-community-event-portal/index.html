@@ -6,6 +6,23 @@
     <title>Local Community Event Portal</title>
 
     <link rel="stylesheet" href="style.css" />
+
+    <style>
+      #welcomeBanner {
+        background-color: #007bff;
+        color: white;
+        padding: 20px;
+        text-align: center;
+        border-radius: 10px;
+        margin: 20px;
+      }
+
+      .highlight {
+        background-color: yellow;
+        font-weight: bold;
+        padding: 3px;
+      }
+    </style>
   </head>
   <body>
     <header>
@@ -24,8 +41,23 @@
 
     <main>
       <section id="home">
-        <h2>Welcome</h2>
-        <p>Welcome to the Local Community Event Portal.</p>
+        <div id="welcomeBanner">
+          <h2>Welcome to the Community Portal</h2>
+
+          <p>Explore local events and activities happening in your city.</p>
+
+          <p>
+            <span style="color: red; font-weight: bold"> Special Offer: </span>
+             Register today and get free event coupons!
+          </p>
+        </div>
+
+        <p class="highlight">New events are updated every week!</p>
+
+        <p>
+          Stay connected with your community through cultural, educational, and
+          entertainment programs.
+        </p>
       </section>
 
       <section id="events">
