@@ -154,7 +154,6 @@
         <h2>Event Registration</h2>
 
         <form id="registrationForm">
-
           <label for="name">Full Name:</label>
           <br />
           <input
@@ -205,14 +204,66 @@
             rows="2"
             cols="40"
             placeholder="Enter your message"
-          >
-          </textarea>
+          ></textarea>
           <br /><br />
           <button type="submit">Register Now</button>
-          <br /><br />
+          <br />
 
           <output id="confirmationMessage"></output>
         </form>
+      </section>
+
+      <section id="feedback">
+        <h2>Event Feedback</h2>
+
+        <label for="phone"> Phone Number: </label>
+        <br />
+        <input
+          type="text"
+          id="phone"
+          placeholder="Enter 10-digit phone number"
+          onblur="validatePhone()"
+        />
+        <p id="phoneError"></p>
+
+        <label for="eventFee"> Select Event: </label>
+        <br />
+        <select id="eventFee" onchange="showEventFee()">
+          <option value="">-- Select Event --</option>
+          <option value="500">Music Festival</option>
+          <option value="300">Food Carnival</option>
+          <option value="700">Sports Meetup</option>
+          <option value="800">Workshop</option>
+          <option value="900">Dance Competition</option>
+          <option value="600">Community Meetup</option>
+        </select>
+        <p id="feeDisplay"></p>
+
+        <img
+          src="assets/images/event1.png"
+          alt="Community Event"
+          id="eventImage"
+          ondblclick="enlargeImage()"
+          width="300"
+        />
+        <p>Double click image to enlarge</p>
+
+        <label for="feedbackText"> Your Feedback: </label>
+        <br />
+        <textarea
+          id="feedbackText"
+          rows="2"
+          cols="40"
+          onkeydown="countCharacters()"
+          placeholder="Enter feedback here"
+        ></textarea>
+
+        <p>
+          Characters:
+          <span id="charCount">0</span>
+        </p>
+
+        <button onclick="submitFeedback()">Submit Feedback</button>
       </section>
 
       <section id="contact">

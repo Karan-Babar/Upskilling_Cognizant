@@ -73,7 +73,7 @@ form {
     max-width: 500px;
     margin: auto;
     background-color: white;
-    padding: 30px;
+    padding: 40px;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
 }
@@ -84,7 +84,8 @@ label {
 input,
 select,
 textarea {
-    width: 100%;
+    width: 95%;
+    max-width: 700px;
     padding: 10px;
     margin-top: 5px;
     border: 1px solid #ccc;
@@ -107,6 +108,32 @@ button:hover {
 #confirmationMessage {
     color: green;
     font-weight: bold;
+}
+
+#feedback {
+    padding: 50px;
+    background-color: #ffffff;
+}
+#feedback h2{
+   font-size: 30px;
+   margin-top: 0px;
+}
+#phoneError {
+    color: red;
+    font-weight: bold;
+}
+#feeDisplay {
+    color: green;
+    font-weight: bold;
+}
+#eventImage {
+    border-radius: 10px;
+    border: 3px solid #007BFF;
+    cursor: pointer;
+}
+#charCount {
+    font-weight: bold;
+    color: #007BFF;
 }
 
 footer {
