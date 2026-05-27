@@ -76,7 +76,7 @@
 
       <section id="gallery">
         <h2>Event Gallery</h2>
-        
+
         <table>
           <tr>
             <td>
@@ -152,7 +152,67 @@
 
       <section id="registration">
         <h2>Event Registration</h2>
-        <p>Registration form will be added here.</p>
+
+        <form id="registrationForm">
+
+          <label for="name">Full Name:</label>
+          <br />
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Enter your full name"
+            required
+            autofocus
+          />
+          <br /><br />
+
+          <label for="email">Email:</label>
+          <br />
+
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Enter your email"
+            required
+          />
+          <br /><br />
+
+          <label for="eventDate">Event Date:</label>
+          <br />
+          <input type="date" id="eventDate" name="eventDate" required />
+          <br /><br />
+
+          <label for="eventType">Select Event Type:</label>
+          <br />
+          <select id="eventType" name="eventType" required>
+            <option value="">-- Select Event --</option>
+            <option value="Music Festival">Music Festival</option>
+            <option value="Food Carnival">Food Carnival</option>
+            <option value="Workshop">Workshop</option>
+            <option value="Sports Meetup">Sports Meetup</option>
+            <option value="Dance Competition">Dance Competition</option>
+            <option value="Community Meetup">Community Meetup</option>
+          </select>
+          <br /><br />
+
+          <label for="message">Message:</label>
+          <br />
+          <textarea
+            id="message"
+            name="message"
+            rows="2"
+            cols="40"
+            placeholder="Enter your message"
+          >
+          </textarea>
+          <br /><br />
+          <button type="submit">Register Now</button>
+          <br /><br />
+
+          <output id="confirmationMessage"></output>
+        </form>
       </section>
 
       <section id="contact">

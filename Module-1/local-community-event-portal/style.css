@@ -61,6 +61,54 @@ td p{
     transition: 0.3s;
 }
 
+#registration {
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+#registration h2{
+    text-align: center;
+    font-size: 35px;
+}
+form {
+    max-width: 500px;
+    margin: auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+}
+label {
+    font-weight: bold;
+    margin-top: -3px;
+}
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: -40px;
+}
+button:hover {
+    background-color: #0056b3;
+}
+#confirmationMessage {
+    color: green;
+    font-weight: bold;
+}
+
 footer {
     background-color: #222;
     color: white;
