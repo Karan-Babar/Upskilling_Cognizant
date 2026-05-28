@@ -17,6 +17,8 @@ registrationForm.addEventListener("submit", function(event) {
 
     confirmationMessage.textContent =
         `Thank you ${userName}! Your registration has been submitted successfully.`;
+
+    registrationForm.reset();
 });
 
 function validatePhone() {
@@ -48,6 +50,10 @@ function showEventFee() {
 
 function submitFeedback() {
     alert("Feedback submitted successfully!");
+    const number = document.getElementById("phone");
+    const feedback = document.getElementById("feedbackText");
+    number.value = "";
+    feedback.value = "";
 }
 
 function enlargeImage() {
