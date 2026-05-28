@@ -159,6 +159,23 @@ button:hover {
     color: #007BFF;
 }
 
+#preferences {
+    padding: 30px;
+    background-color: #ffffff;
+    text-align: center;
+}
+#preferences h2{
+    font-size: 30px;
+}
+#preferences label{
+    color: #ff4400d5;
+}
+#savedPreferenceMessage {
+    color: green;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
 footer {
     background-color: #222;
     color: white;

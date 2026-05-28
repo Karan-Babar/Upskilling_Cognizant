@@ -160,6 +160,30 @@
         <p id="videoMessage"></p>
       </section>
 
+      <section id="preferences">
+        <h2>User Event Preferences</h2>
+
+        <label for="preferredEvent"> Choose Preferred Event: </label>
+        <br />
+
+        <select id="preferredEvent">
+          <option value="">-- Select Event --</option>
+          <option value="Music Festival">Music Festival</option>
+          <option value="Food Carnival">Food Carnival</option>
+          <option value="Workshop">Workshop</option>
+          <option value="Sports Meetup">Sports Meetup</option>
+          <option value="Dance Competition">Dance Competition</option>
+          <option value="Community Meetup">Community Meetup</option>
+        </select>
+        <br /><br />
+
+        <button onclick="savePreference()">Save Preference</button>
+
+        <button onclick="clearPreferences()">Clear Preferences</button>
+
+        <p id="savedPreferenceMessage"></p>
+      </section>
+
       <section id="registration">
         <h2>Event Registration</h2>
 

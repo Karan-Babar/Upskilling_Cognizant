@@ -76,3 +76,49 @@ window.onbeforeunload = function() {
 
     return "You have unsaved changes. Are you sure you want to leave?";
 };
+
+function savePreference() {
+
+    const preferredEvent = document.getElementById("preferredEvent").value;
+
+    localStorage.setItem(
+        "preferredEvent",
+        preferredEvent
+    );
+
+    sessionStorage.setItem(
+        "sessionMessage",
+        "Preference Saved"
+    );
+
+    const message = document.getElementById("savedPreferenceMessage");
+
+    message.textContent = `Your preferred event "${preferredEvent}" has been saved.`;
+}
+
+window.addEventListener("load", function () {
+
+    const savedEvent = localStorage.getItem("preferredEvent");
+
+    if (savedEvent) {
+
+        document.getElementById("preferredEvent").value = savedEvent;
+
+        document.getElementById(
+            "savedPreferenceMessage"
+        ).textContent = `Previously selected event loaded: ${savedEvent}`;
+    }
+});
+
+function clearPreferences() {
+
+    localStorage.clear();
+
+    sessionStorage.clear();
+
+    document.getElementById("preferredEvent").value = "";
+
+    document.getElementById(
+        "savedPreferenceMessage"
+    ).textContent = "Preferences cleared successfully.";
+}
