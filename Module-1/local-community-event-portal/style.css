@@ -176,6 +176,20 @@ button:hover {
     margin-top: 30px;
 }
 
+#locationSection {
+    padding: 30px;
+    text-align: center;
+    background-color: #f4f4f4;
+}
+#locationSection h2{
+    font-size: 30px;
+}
+#locationOutput {
+    margin-top: 25px;
+    font-weight: bold;
+    color: #007BFF;
+}
+
 footer {
     background-color: #222;
     color: white;

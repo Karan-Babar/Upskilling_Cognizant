@@ -122,3 +122,63 @@ function clearPreferences() {
         "savedPreferenceMessage"
     ).textContent = "Preferences cleared successfully.";
 }
+
+function findLocation() {
+
+    const output = document.getElementById("locationOutput");
+
+    if (!navigator.geolocation) {
+
+        output.textContent = "Geolocation is not supported by your browser.";
+
+        return;
+    }
+
+    output.textContent = "Locating nearby events...";
+
+    const options = {
+        enableHighAccuracy: true,
+        timeout: 10000,
+        maximumAge: 0
+    };
+
+    navigator.geolocation.getCurrentPosition(
+
+        function(position) {
+
+            const latitude = position.coords.latitude;
+
+            const longitude = position.coords.longitude;
+
+            output.innerHTML =
+                `
+                Latitude: ${latitude}
+                <br>
+                Longitude: ${longitude}
+                `;
+        },
+
+        function(error) {
+            switch(error.code) {
+                case error.PERMISSION_DENIED:
+                    output.textContent = "Location access denied by user.";
+                    break;
+
+                case error.POSITION_UNAVAILABLE:
+                    output.textContent = "Location information unavailable.";
+                    break;
+
+                case error.TIMEOUT:
+                    output.textContent =
+                        "Location request timed out.";
+                    break;
+
+                default:
+                    output.textContent =
+                        "An unknown error occurred.";
+            }
+        },
+
+        options
+    );
+}
