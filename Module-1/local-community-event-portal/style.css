@@ -1,3 +1,6 @@
+html {
+    scroll-behavior: smooth;
+}
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -30,6 +33,26 @@ nav a:hover {
 
 section {
     padding: 20px;
+}
+
+#videoSection {
+    padding: 30px;
+    text-align: center;
+    background-color: #e0d9d9;
+}
+#videoSection h2{
+    font-size: 30px;
+}
+video {
+    border: 3px solid #007BFF;
+    border-radius: 15px;
+    max-width: 100%;
+}
+#videoMessage {
+    color: rgb(236, 12, 27);
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 20px;
 }
 
 #gallery {

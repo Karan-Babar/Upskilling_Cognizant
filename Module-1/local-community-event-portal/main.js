@@ -1,6 +1,7 @@
 console.log("Welcome to the Community Portal");
 
 window.onload = function () {
+    window.scrollTo(0, 0);
     alert("Page Loaded Successfully");
 };
 
@@ -64,3 +65,14 @@ function countCharacters() {
 
     charCount.textContent = feedbackText.value.length;
 }
+
+function videoReady() {
+
+    const videoMessage = document.getElementById("videoMessage");
+
+    videoMessage.textContent = "Video ready to play";
+}
+window.onbeforeunload = function() {
+
+    return "You have unsaved changes. Are you sure you want to leave?";
+};
