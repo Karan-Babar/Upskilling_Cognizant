@@ -7,7 +7,19 @@
 
     <link rel="stylesheet" href="style.css" />
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
     <style>
+      .para {
+        margin-left: 20px;
+      }
       #welcomeBanner {
         background-color: #007bff;
         color: white;
@@ -20,7 +32,27 @@
       .highlight {
         background-color: yellow;
         font-weight: bold;
-        padding: 3px;
+        padding: 4px;
+        margin-left: 20px;
+        margin-right: 20px;
+      }
+      @media screen and (max-width: 768px) {
+        #home p {
+          font-size: 12px;
+        }
+        #welcomeBanner {
+          padding: 12px;
+          margin: 20px;
+        }
+        #welcomeBanner h2 {
+          font-size: 15px;
+        }
+        #welcomeBanner p {
+          font-size: 12px;
+        }
+        .highlight {
+          font-size: 13px;
+        }
       }
     </style>
   </head>
@@ -34,8 +66,8 @@
       <a href="#events">Events</a>
       <a href="#gallery">Gallery</a>
       <a href="#registration">Register</a>
+      <a href="#feedback">Feedback</a>
       <a href="#contact">Contact</a>
-
       <a href="help.html" target="_blank">Help</a>
     </nav>
 
@@ -54,7 +86,7 @@
 
         <p class="highlight">New events are updated every week!</p>
 
-        <p>
+        <p class="para">
           Stay connected with your community through cultural, educational, and
           entertainment programs.
         </p>
@@ -63,15 +95,46 @@
       <section id="events">
         <h2>Upcoming Events</h2>
 
-        <article>
-          <h3>Music Festival</h3>
-          <p>Date: June 10, 2026</p>
-        </article>
+        <div class="eventContainer">
+          <article class="eventCard">
+            <img
+              src="assets/images/event1.png"
+              alt="Music Festival"
+              class="eventImage"
+            />
+            <h3>Music Festival</h3>
+            <p>Date: June 10, 2026</p>
+            <a href="#registration">
+              <button>Register</button>
+            </a>
+          </article>
 
-        <article>
-          <h3>Food Carnival</h3>
-          <p>Date: July 5, 2026</p>
-        </article>
+          <article class="eventCard">
+            <img
+              src="assets/images/event2.png"
+              alt="Food Carnival"
+              class="eventImage"
+            />
+            <h3>Food Carnival</h3>
+            <p>Date: July 5, 2026</p>
+            <a href="#registration">
+              <button>Register</button>
+            </a>
+          </article>
+
+          <article class="eventCard">
+            <img
+              src="assets/images/event3.png"
+              alt="Workshop Event"
+              class="eventImage"
+            />
+            <h3>Workshop Event</h3>
+            <p>Date: August 12, 2026</p>
+            <a href="#registration">
+              <button>Register</button>
+            </a>
+          </article>
+        </div>
       </section>
 
       <section id="gallery">
@@ -148,6 +211,33 @@
             </td>
           </tr>
         </table>
+      </section>
+
+      <section id="newsSection">
+        <h2>Community Bulletin</h2>
+
+        <div class="newsArticle">
+          <p>
+            The city council has announced several upcoming community events
+            including cultural programs, music festivals, food exhibitions, and
+            educational workshops for local residents. Citizens are encouraged
+            to participate actively and register online through the community
+            portal.
+          </p>
+
+          <p>
+            New environmental awareness campaigns will also begin this month.
+            Volunteers can participate in tree plantation drives, cleanliness
+            activities, and awareness rallies across the city.
+          </p>
+
+          <p>
+            The annual sports competition for youth will be organized next week.
+            Registration is open for football, cricket, badminton, and athletics
+            events. Winners will receive certificates and prizes from the city
+            administration.
+          </p>
+        </div>
       </section>
 
       <section id="videoSection">
