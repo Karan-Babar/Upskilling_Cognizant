@@ -101,6 +101,30 @@ searchInput.addEventListener("keyup", function () {
   searchEvents(searchInput.value);
 });
 
+async function sendRegistration(registrationData) {
+  try {
+    const response = await fetch("https://jsonplaceholder.typicode.com/posts", {
+      method: "POST",
+
+      headers: {
+        "Content-Type": "application/json",
+      },
+
+      body: JSON.stringify(registrationData),
+    });
+
+    if (!response.ok) {
+      throw new Error("Registration Failed");
+    }
+
+    const data = await response.json();
+
+    return data;
+  } catch (error) {
+    throw error;
+  }
+}
+
 const registrationForm = document.getElementById("registrationForm");
 
 const confirmationMessage = document.getElementById("confirmationMessage");
@@ -124,30 +148,22 @@ registrationForm.addEventListener("submit", function (event) {
 
   statusMessage.textContent = "Sending registration...";
 
-  setTimeout(() => {
-    fetch("https://jsonplaceholder.typicode.com/posts", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(registrationData),
-    })
-      .then((response) => response.json())
+  setTimeout(async () => {
+    try {
+      const data = await sendRegistration(registrationData);
 
-      .then((data) => {
-        statusMessage.textContent = "";
+      statusMessage.textContent = "";
 
-        confirmationMessage.textContent = `Thank you ${userName}! Your registration has been submitted successfully.`;
+      confirmationMessage.textContent = `Thank you ${userName}! Your registration has been submitted successfully.`;
 
-        registrationForm.reset();
-        console.log(data);
-      })
+      registrationForm.reset();
 
-      .catch((error) => {
-        statusMessage.textContent = "Failed to submit registration.";
+      console.log(data);
+    } catch (error) {
+      statusMessage.textContent = "Failed to submit registration.";
 
-        console.error(error);
-      });
+      console.error(error);
+    }
   }, 2000);
 });
 
