@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bootstrap Exercises</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+
+    <link rel="stylesheet" href="custom.css" />
+  </head>
+
+  <body>
+    
+    <div class="container mt-5">
+      <h1 class="text-primary">Bootstrap 5 Setup Successful</h1>
+      <p class="lead">Cognizant Bootstrap Module</p>
+      <button class="btn btn-primary">Bootstrap Button</button>
+    </div>
+
+    <div class="container mt-5">
+      <h1 class="text-primary">Bootstrap Modal Demo</h1>
+      <button
+        class="btn btn-success"
+        data-bs-toggle="modal"
+        data-bs-target="#eventModal"
+      >
+        Open Event Details
+      </button>
+    </div>
+
+    <div class="modal fade" id="eventModal" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Community Event</h5>
+
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+
+          <div class="modal-body">
+            Welcome to the Local Community Event Portal!
+          </div>
+
+          <div class="modal-footer">
+            <button class="btn btn-secondary" data-bs-dismiss="modal">
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
