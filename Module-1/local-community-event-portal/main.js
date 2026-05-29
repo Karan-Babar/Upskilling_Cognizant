@@ -5,6 +5,58 @@ window.onload = function () {
     alert("Page Loaded Successfully");
 };
 
+const events = [
+    {
+        id: 1,
+        name: "Music Festival",
+        date: "2026-06-10",
+        category: "Music",
+        seats: 50,
+        image: "assets/images/event1.png"
+    },
+
+    {
+        id: 2,
+        name: "Food Carnival",
+        date: "2026-07-05",
+        category: "Food",
+        seats: 30,
+        image: "assets/images/event2.png"
+    },
+
+    {
+        id: 3,
+        name: "Workshop Event",
+        date: "2026-08-12",
+        category: "Education",
+        seats: 20,
+        image: "assets/images/event3.png"
+    }
+];
+
+function displayEvents() {
+    const container = document.getElementById("eventContainer");
+    container.innerHTML = "";
+    events.forEach(event => {
+        container.innerHTML += `
+        
+        <article class="eventCard">
+            <img src="${event.image}"
+                 alt="${event.name}"
+                 class="eventImage">
+            <h3>${event.name}</h3>
+            <p>Date: ${event.date}</p>
+            <p>Seats Available: <span style="color: red; font-weight: bold">${event.seats}</span></p>
+            <a href="#registration" class="registerBtn">
+                <button>Register</button>
+            </a>
+        </article>
+        `;
+    });
+}
+
+displayEvents();
+
 const registrationForm = document.getElementById("registrationForm");
 
 const confirmationMessage = document.getElementById("confirmationMessage");
