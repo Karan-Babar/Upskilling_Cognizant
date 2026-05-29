@@ -134,6 +134,8 @@ const statusMessage = document.getElementById("statusMessage");
 registrationForm.addEventListener("submit", function (event) {
   event.preventDefault();
 
+  console.log("Form Submission Started");
+
   const userName = document.getElementById("name").value;
 
   const email = document.getElementById("email").value;
@@ -159,6 +161,7 @@ registrationForm.addEventListener("submit", function (event) {
       registrationForm.reset();
 
       console.log(data);
+      console.log("Registration Successful");
     } catch (error) {
       statusMessage.textContent = "Failed to submit registration.";
 
@@ -310,3 +313,8 @@ function findLocation() {
     options,
   );
 }
+
+$("#demoBtn").click(function () {
+    $("#jqueryCard").fadeOut(1000);
+    $("#jqueryCard").fadeIn(1000);
+});
