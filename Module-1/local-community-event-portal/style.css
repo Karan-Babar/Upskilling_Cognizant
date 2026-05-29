@@ -82,8 +82,33 @@ section {
     scroll-margin-top: 40px;
 }
 
+.searchSection {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.searchSection input {
+    width: 500px;
+    max-width: 90%;
+    padding: 12px;
+    border: 2px solid #007BFF;
+    border-radius: 8px;
+    font-size: 16px;
+}
+.filterSection {
+    margin: 20px 0;
+    text-align: center;
+}
+.filterSection label {
+    font-weight: bold;
+    margin-right: 10px;
+}
+.filterSection select {
+    padding: 8px 12px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
 #events {
-    padding: 30px 20px;
+    padding: 20px 20px;
     background-color: #e4e3e3;
     text-align: center;
 }
@@ -95,7 +120,7 @@ section {
     justify-content: center;
     gap: 50px;
     flex-wrap: wrap;
-    margin-top: 50px;
+    margin-top: 40px;
 }
 .eventCard {
     background-color: white;
