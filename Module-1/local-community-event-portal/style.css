@@ -94,6 +94,12 @@ section {
     border-radius: 8px;
     font-size: 16px;
 }
+@media screen and (max-width: 768px){
+    .searchSection input{
+        padding: 8px;
+        font-size: 12px;
+    }
+}
 .filterSection {
     margin: 20px 0;
     text-align: center;
@@ -104,8 +110,13 @@ section {
 }
 .filterSection select {
     padding: 8px 12px;
-    border-radius: 5px;
+    border-radius: 6px;
     border: 1px solid #ccc;
+}
+@media screen and (max-width: 768px){
+    .filterSection select{
+        font-size: 12px;
+    }
 }
 #events {
     padding: 20px 20px;
@@ -326,7 +337,7 @@ button {
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
-    margin-bottom: -40px;
+    margin-bottom: 20px;
 }
 button:hover {
     background-color: #0056b3;
@@ -334,6 +345,11 @@ button:hover {
 #confirmationMessage {
     color: green;
     font-weight: bold;
+}
+#statusMessage{
+    margin-top: 0px;
+    font-weight:bold;
+    color:#007BFF;
 }
 @media screen and (max-width: 768px){
     #registration h2{

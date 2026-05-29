@@ -60,86 +60,95 @@ function displayEvents(eventList = events) {
 displayEvents();
 
 function registerUser(eventId) {
-    const selectedEvent = events.find(event => event.id === eventId );
+  const selectedEvent = events.find((event) => event.id === eventId);
 
-    if (selectedEvent.seats > 0) {
-        selectedEvent.seats--;
-        alert(
-            `Registration successful for ${selectedEvent.name}`
-        );
-        displayEvents();
-    } else {
-        alert(
-            `Sorry! No seats available for ${selectedEvent.name}`
-        );
-    }
+  if (selectedEvent.seats > 0) {
+    selectedEvent.seats--;
+    alert(`Registration successful for ${selectedEvent.name}`);
+    displayEvents();
+  } else {
+    alert(`Sorry! No seats available for ${selectedEvent.name}`);
+  }
 }
 function filterEventsByCategory(category) {
+  if (category === "All") {
+    displayEvents();
 
-    if (category === "All") {
+    return;
+  }
 
-        displayEvents();
+  const filteredEvents = events.filter((event) => event.category === category);
 
-        return;
-    }
-
-    const filteredEvents = events.filter(
-        event => event.category === category
-    );
-
-    displayEvents(filteredEvents);
+  displayEvents(filteredEvents);
 }
-const categoryFilter =
-    document.getElementById("categoryFilter");
+const categoryFilter = document.getElementById("categoryFilter");
 
-categoryFilter.addEventListener(
-    "change",
-    function () {
-
-        filterEventsByCategory(
-            categoryFilter.value
-        );
-
-    }
-);
+categoryFilter.addEventListener("change", function () {
+  filterEventsByCategory(categoryFilter.value);
+});
 
 function searchEvents(searchText) {
+  const filteredEvents = events.filter((event) =>
+    event.name.toLowerCase().includes(searchText.toLowerCase()),
+  );
 
-    const filteredEvents = events.filter(
-        event =>
-            event.name
-                .toLowerCase()
-                .includes(
-                    searchText.toLowerCase()
-                )
-    );
-
-    displayEvents(filteredEvents);
+  displayEvents(filteredEvents);
 }
 
 const searchInput = document.getElementById("searchInput");
 
-searchInput.addEventListener(
-    "keyup",
-    function () {
-        searchEvents(
-            searchInput.value
-        );
-    }
-);
+searchInput.addEventListener("keyup", function () {
+  searchEvents(searchInput.value);
+});
 
 const registrationForm = document.getElementById("registrationForm");
 
 const confirmationMessage = document.getElementById("confirmationMessage");
+
+const statusMessage = document.getElementById("statusMessage");
 
 registrationForm.addEventListener("submit", function (event) {
   event.preventDefault();
 
   const userName = document.getElementById("name").value;
 
-  confirmationMessage.textContent = `Thank you ${userName}! Your registration has been submitted successfully.`;
+  const email = document.getElementById("email").value;
 
-  registrationForm.reset();
+  const eventType = document.getElementById("eventType").value;
+
+  const registrationData = {
+    name: userName,
+    email: email,
+    eventType: eventType,
+  };
+
+  statusMessage.textContent = "Sending registration...";
+
+  setTimeout(() => {
+    fetch("https://jsonplaceholder.typicode.com/posts", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(registrationData),
+    })
+      .then((response) => response.json())
+
+      .then((data) => {
+        statusMessage.textContent = "";
+
+        confirmationMessage.textContent = `Thank you ${userName}! Your registration has been submitted successfully.`;
+
+        registrationForm.reset();
+        console.log(data);
+      })
+
+      .catch((error) => {
+        statusMessage.textContent = "Failed to submit registration.";
+
+        console.error(error);
+      });
+  }, 2000);
 });
 
 function validatePhone() {
