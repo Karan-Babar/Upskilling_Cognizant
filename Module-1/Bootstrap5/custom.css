@@ -8,3 +8,7 @@
     transform: translateY(-5px);
     transition: 0.3s;
 }
+
+body{
+    padding-bottom: 40px;
+}
